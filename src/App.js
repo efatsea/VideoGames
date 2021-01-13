@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Forms from './Forms';
+import List from './List'
 
 class App extends Component {
   
   constructor(props){
     super(props)
     this.state={
-      
+      users:[]
     }
   
   }
@@ -21,6 +22,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
 		<Forms/>
+		<List/>
       </div>
     );
   }
