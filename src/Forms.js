@@ -34,6 +34,8 @@ class Forms extends Component {
    quer2=this.state.query2;
    quer3=this.state.query3;
    this.props.addUser(quer1,quer2,quer3); 
+    this.setState({query1:'',query2:'',query3:''})
+   
  }
 
   render(){

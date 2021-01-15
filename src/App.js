@@ -15,7 +15,11 @@ class App extends Component {
     }
   
   }
-  
+  updateUsers=()=>{
+  	const temp=this.state.users;
+    temp.push(this.state.user);
+    this.setState({users:temp});
+  }
   addUser=(quer1,quer2,quer3)=>{
     this.setState(prevState=>({
       user:{
@@ -25,6 +29,7 @@ class App extends Component {
         username:quer3
       }
      }))
+    this.updateUsers();
   }
   render() {
     return (
