@@ -1,8 +1,15 @@
 import React , {Component} from 'react';
 
+const user={};
+let quer1
+let quer2
+let quer3
+
 class Forms extends Component {
+  
   constructor(props){
     super(props)
+     this.addParent = this.addParent.bind(this);
     this.state={
       query1:'',
       query2:'',
@@ -11,13 +18,24 @@ class Forms extends Component {
   }
   handleName=(event)=>{
     this.setState({query1:event.target.value})
+    
   }
   handleLastName=(event)=>{
     this.setState({query2:event.target.value})
+    
   }
   handleUsername=(event)=>{
     this.setState({query3:event.target.value})
+    
   }
+ addParent=(event)=>{
+   event.preventDefault();
+   quer1=this.state.query1;
+   quer2=this.state.query2;
+   quer3=this.state.query3;
+   this.props.addUser(quer1,quer2,quer3); 
+ }
+
   render(){
   	return(
       <form>
@@ -43,7 +61,7 @@ class Forms extends Component {
                  onChange={this.handleUsername}/>
       	</label>
       	<br/>
-      	<button>Add</button>
+      	<button onClick={this.addParent}>Add</button>
       </form>
     
     );

@@ -8,12 +8,24 @@ class App extends Component {
   
   constructor(props){
     super(props)
+    this.addUser = this.addUser.bind(this);
     this.state={
-      users:[]
+      users:[],
+      user:{name:'',lastName:'',username:''}
     }
   
   }
   
+  addUser=(quer1,quer2,quer3)=>{
+    this.setState(prevState=>({
+      user:{
+        ...prevState.user,
+        name:quer1,
+        lastName:quer2,
+        username:quer3
+      }
+     }))
+  }
   render() {
     return (
       <div className="App">
@@ -21,7 +33,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-		<Forms/>
+		<Forms addUser={this.addUser} />
 		<List/>
       </div>
     );
