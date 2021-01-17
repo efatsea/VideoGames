@@ -63,7 +63,10 @@ class Forms extends Component {
                  onChange={this.handleUsername}/>
       	</label>
       	<br/>
-      	<button onClick={this.addParent}>Add</button>
+        {this.state.query1!=='' & this.state.query2!=='' &&
+        	<button onClick={this.addParent}>Add</button>
+        }
+      	
       </form>
     
     );

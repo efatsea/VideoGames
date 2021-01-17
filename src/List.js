@@ -6,7 +6,15 @@ class List extends Component {
   	return(
     	<div className='Container'>
       		<h3> List of Gamers </h3>
-      			
+            <ol className='listGamers'>
+              {this.props.users.map((use)=>{
+      			return(
+                    <li key={use.lastName}>          
+                      <p>{`${use.username} played 0 games`}</p>
+                    </li>
+                  )
+              })}
+            </ol>
       	</div>
     )
   }

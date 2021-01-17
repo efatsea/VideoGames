@@ -39,7 +39,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
 		<Forms addUser={this.addUser} />
-		<List/>
+		<List users={this.state.users}/>
       </div>
     );
   }
